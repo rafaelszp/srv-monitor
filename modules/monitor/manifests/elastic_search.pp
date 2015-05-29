@@ -39,4 +39,10 @@ class monitor::elastic_search {
 	  init_defaults => $config_hash, # Init defaults hash
 	  datadir => [ '/var/lib/elasticsearch/elasticsearch001'],       # Data directory
 	}
+
+
+	es_instance_conn_validator { 'es-01' :
+	  server => $::ipaddress,
+	  port   => '9200',
+	}
 }

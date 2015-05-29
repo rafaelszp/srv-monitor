@@ -31,6 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		logmonitor.vm.network "forwarded_port", guest:9200, host: 9200, auto_correct: true
 		logmonitor.vm.network "forwarded_port", guest:5000, host: 5000, auto_correct: true
 		logmonitor.vm.network "forwarded_port", guest:6666, host: 6666, protocol: 'udp', auto_correct: true
+		logmonitor.vm.network "forwarded_port", guest:80, host: 8380, auto_correct: true
 
 	end
 
