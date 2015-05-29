@@ -27,10 +27,13 @@ public class LogstashJsonLayout extends Layout {
         Map<String, Object> message = new LinkedHashMap<>();
 
         //message.put("@timestamp", le.timeStamp);
+        message.put("@timestampNumber", le.timeStamp);
         message.put("hostname", hostname);
         message.put("username", username);
         message.put("level", le.getLevel().toString());
         message.put("thread", le.getThreadName());
+        message.put("application",le.getProperty("application"));
+        message.put("logType","log4j");
 
         if (le.getMessage() instanceof Map) {
             message.putAll((Map<? extends String, ? extends Object>) le.getMessage());
