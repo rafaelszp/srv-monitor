@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    
+    <appender name="tcp" class="org.apache.log4j.net.SocketAppender">
+        <param name="port" value="5000" />
+        <param name="remoteHost" value="10.21.5.154" />
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="application" value="dummyApp"/>
+<!--        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%t] %c %M - %m%n"/>
+        </layout>-->
+        <layout class="com.example.dummyapp.LogstashJsonLayout"/>
+    </appender>
+    
+    <appender name="udp" class="org.apache.log4j.receivers.net.UDPAppender">
+        <param name="port" value="6666" />
+        <param name="remoteHost" value="10.21.5.154" />
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="application" value="dummyApp"/>
+        <param name="encoding" value="UTF-8"/> 
+        <layout class="com.example.dummyapp.LogstashJsonLayout"/>
+    </appender>
+
+    <root>
+        <priority value ="TRACE" />
+        <!--<appender-ref ref="tcp" />-->       
+        <appender-ref ref="udp" />       
+    </root>
+
+</log4j:configuration>
+

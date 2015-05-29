@@ -1,0 +1,6 @@
+forge "http://forge.puppetlabs.com"
+mod "treydock/yum_cron", "1.2.0"
+mod "stahnma-epel", "1.0.2"
+mod "rtyler/jenkins", "1.4.0"
+mod "elasticsearch/elasticsearch", "0.9.5"
+mod "elasticsearch-logstash", "0.5.1"

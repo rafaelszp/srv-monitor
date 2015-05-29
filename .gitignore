@@ -1,0 +1,8 @@
+.class
+target/
+.vagrant/
+librarian/.librarian/
+librarian/modules/
+librarian/modules/*.lock
+librarian/.tmp/
+librarian/Puppetfile.lock
